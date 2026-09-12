@@ -1,0 +1,126 @@
+*{box-sizing:border-box}
+:root{--ink:#171717;--paper:#f4f1eb;--line:rgba(23,23,23,.16)}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,"Noto Sans JP",Arial,sans-serif;font-weight:400}
+img{display:block;max-width:100%}
+/* Unified editorial color treatment: warm, natural, food-forward. */
+.hero>img,.brand-grid img,.store-image img,.food-photo img{filter:saturate(1.015) contrast(1.018)}a{color:inherit;text-decoration:none}
+
+/* No fixed navigation: the first frame stays clean and nothing covers the video/image while scrolling. */
+.hero{height:100svh;min-height:650px;position:relative;overflow:hidden;background:#222}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.45))}
+.hero-copy{position:absolute;left:7vw;bottom:11vh;color:#fff}
+.eyebrow,.section-label{font-size:10px;letter-spacing:.25em}
+.hero h1{font-family:"Noto Serif SC",serif;font-size:clamp(70px,10vw,148px);font-weight:400;line-height:.82;letter-spacing:.035em;margin:18px 0 20px;display:flex;flex-direction:column;align-items:flex-start}
+.hero h1 span:first-child{font-size:1em;letter-spacing:.12em}
+.hero h1 span:last-child{font-family:Arial,sans-serif;font-size:.46em;font-weight:300;letter-spacing:.28em;margin-top:.34em;margin-left:.08em;line-height:.9}
+.scroll-hint{position:absolute;right:38px;bottom:34px;color:#fff;font-size:9px;letter-spacing:.2em;display:flex;align-items:center;gap:12px}
+.scroll-hint span{width:46px;height:1px;background:#fff}
+
+/* Three languages are visible together instead of using a language switcher. */
+.tri,.tri-title,.tri-copy,.tri-small,.tri-kicker,.tri-note{display:flex;flex-direction:column}
+.tri{gap:4px}.tri span:nth-child(2),.tri-title span:nth-child(2),.tri-copy p:nth-child(2),.tri-small span:nth-child(2),.tri-kicker span:nth-child(2),.tri-note span:nth-child(2){font-family:"Noto Sans JP",sans-serif}
+.tri span:nth-child(3),.tri-title span:nth-child(3),.tri-small span:nth-child(3),.tri-kicker span:nth-child(3),.tri-note span:nth-child(3){font-family:Inter,sans-serif}
+.hero-sub{font-size:12px;letter-spacing:.08em}
+
+.section{padding:130px 7vw}.section-label{margin-bottom:75px}.section-label span{letter-spacing:.04em}
+.brand-intro{max-width:1100px;margin:0 auto 110px}
+.tri-title{font-family:"Noto Serif SC",serif;line-height:1.05;gap:5px;margin-bottom:40px}
+.tri-title span:first-child{font-size:clamp(42px,6vw,82px)}
+.tri-title span:nth-child(2){font-size:clamp(28px,3.7vw,50px);opacity:.72}
+.tri-title span:nth-child(3){font-size:clamp(14px,1.5vw,20px);letter-spacing:.04em;opacity:.55}
+.tri-copy{display:grid;grid-template-columns:repeat(3,1fr);gap:42px;max-width:1080px;color:#4d4a45}
+.tri-copy p{font-size:14px;line-height:2;margin:0}.tri-copy p:nth-child(2){font-size:13px}.tri-copy p:nth-child(3){font-size:13px;opacity:.82}
+.brand-grid{display:flex;justify-content:center;align-items:center}.brand-grid figure{margin:0;overflow:hidden}
+.brand-grid.single-portrait .portrait{width:min(1120px,86vw);height:auto;margin:0 auto}.brand-grid.single-portrait img{width:100%;height:auto;object-fit:contain;object-position:center}
+
+.section-heading{display:flex;align-items:end;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:55px}
+.heading-tri{display:flex;align-items:baseline;gap:16px;font-family:"Noto Serif SC",serif}.heading-tri span:first-child{font-size:clamp(55px,9vw,120px);line-height:.9}.heading-tri span:nth-child(2){font-family:"Noto Sans JP",sans-serif;font-size:clamp(25px,4vw,50px);opacity:.7}.heading-tri span:nth-child(3){font-family:Inter,sans-serif;font-size:clamp(12px,1.4vw,18px);letter-spacing:.12em;opacity:.55}
+.tri-small{gap:4px;text-align:right;font-size:11px;letter-spacing:.04em}.tri-small span:nth-child(2){opacity:.8}.tri-small span:nth-child(3){font-size:10px;opacity:.68;letter-spacing:.1em}
+.tri-small.center{text-align:center;align-items:center}
+
+/* Stores: image first, then one clear, large location line. No repeated "舞麦UMAI日本料理" under the photo. */
+.store{margin:0 auto 120px;max-width:1250px}.store-image{width:100%;overflow:hidden;background:#ddd;display:flex;justify-content:center;align-items:center}.store-image img{width:100%;height:auto;object-fit:contain;object-position:center}
+.store-meta{display:flex;gap:45px;padding-top:24px;align-items:flex-start}.store-number{font-size:10px;letter-spacing:.2em;padding-top:8px}.store-place{line-height:1.18}.place-cn{font-family:"Noto Serif SC",serif;font-size:clamp(28px,3.2vw,48px)}.place-jp{font-family:"Noto Sans JP",sans-serif;font-size:clamp(18px,2vw,30px);opacity:.72;margin-top:7px}.place-en{font-family:Inter,sans-serif;font-size:12px;letter-spacing:.08em;opacity:.55;margin-top:8px}.second-store{margin-top:35px}
+
+.cuisine{background:#171717;color:#f5f2eb}.cuisine .section-heading{border-color:rgba(255,255,255,.18)}
+.food-list{display:flex;flex-direction:column;align-items:center;gap:110px}
+.food-photo{margin:0;display:flex;justify-content:center;align-items:center;background:transparent;overflow:hidden}.food-photo img{width:100%;height:auto;object-fit:contain;object-position:center}
+.food-landscape{width:min(1120px,86vw)}
+.food-pair{width:min(1120px,86vw);display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}.new-pair{align-items:center}.new-pair .food-photo{min-width:0}.new-landscape-pair{width:100%}.new-pair .food-photo img{display:block}
+.food-portrait{width:100%}.food-portrait img{width:100%;height:auto}
+.food-new-portrait{width:min(760px,72vw);margin-left:auto;margin-right:auto}
+.food-new-landscape{width:min(1120px,86vw);margin-left:auto;margin-right:auto}
+.cuisine-line{border-top:1px solid rgba(255,255,255,.2);margin-top:95px;padding-top:20px;display:flex;justify-content:space-between;font-size:9px;letter-spacing:.12em;opacity:.8}
+
+.tokyo{background:#0e0e0e;color:#eee;min-height:100svh;padding-top:150px}.tokyo .section-label{color:#999}.tokyo-title{text-align:center;padding:60px 0 100px}.tri-kicker{align-items:center;gap:5px;font-size:9px;letter-spacing:.2em;color:#999}.tokyo-title h2{font-size:clamp(80px,16vw,240px);font-weight:300;letter-spacing:-.06em;line-height:.8;margin:30px 0}.tokyo-title h3{font-family:"Noto Serif SC",serif;font-size:27px;font-weight:400;margin:25px 0 18px}.tokyo-placeholder{height:440px;border:1px solid #333;display:flex;align-items:center;justify-content:center;text-align:center}.tokyo-placeholder strong{font-size:10px;letter-spacing:.3em}.tri-note{gap:7px;font-size:12px;color:#777;margin-top:12px}.tri-note span:nth-child(3){font-size:11px}
+footer{background:#0e0e0e;color:#eee;padding:100px 7vw 30px}.footer-brand{display:flex;flex-direction:column;align-items:center;text-align:center;padding:35px 0 10px}.footer-parent{font-family:Inter,sans-serif;font-size:10px;letter-spacing:.42em;margin-left:.42em;color:#888}.footer-mark{display:flex;flex-direction:column;align-items:center;margin-top:30px;line-height:.82}.footer-mark span:first-child{font-family:"Noto Serif SC",serif;font-size:clamp(54px,7vw,88px);font-weight:400;letter-spacing:.08em}.footer-mark span:last-child{font-family:Inter,sans-serif;font-size:clamp(24px,3vw,38px);font-weight:300;letter-spacing:.28em;margin-left:.28em;margin-top:18px}.footer-subline{display:flex;gap:18px;align-items:center;justify-content:center;margin-top:34px;font-size:8px;letter-spacing:.12em;color:#666}.footer-subline span+span:before{content:"·";margin-right:18px;color:#444}.footer-bottom{border-top:1px solid #333;margin-top:100px;padding-top:18px;display:flex;justify-content:space-between;font-size:9px;letter-spacing:.16em;color:#777}
+
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .9s ease,transform .9s ease}.reveal.is-visible{opacity:1;transform:none}
+@media(max-width:700px){
+ .hero-copy{left:22px;bottom:90px}.scroll-hint{right:20px}.section{padding:90px 20px}.section-label{margin-bottom:50px}
+ .brand-intro{margin-bottom:65px}.tri-title span:first-child{font-size:48px}.hero h1{font-size:clamp(58px,18vw,92px);line-height:.84}.hero h1 span:last-child{font-size:.44em;letter-spacing:.22em;margin-top:.38em;line-height:.9}.tri-copy{grid-template-columns:1fr;gap:24px}.tri-copy p{font-size:13px!important;line-height:1.9}
+ .brand-grid.single-portrait .portrait{width:100%}
+ .section-heading{display:block}.heading-tri{gap:10px;flex-wrap:wrap}.heading-tri span:first-child{font-size:60px}.heading-tri span:nth-child(2){font-size:34px}.heading-tri span:nth-child(3){font-size:12px}.tri-small{text-align:left;margin-top:18px}
+ .store{margin-bottom:80px}.store-meta{gap:18px;padding-top:18px}.store-number{padding-top:6px}.place-cn{font-size:28px}.place-jp{font-size:18px}.place-en{font-size:10px;line-height:1.4}
+ .food-list{gap:70px}.food-landscape,.food-pair{width:100%}.food-pair{grid-template-columns:1fr 1fr;gap:12px}.food-new-portrait{width:min(88vw,520px)}.cuisine-line{font-size:7px;gap:12px;flex-wrap:wrap}
+ .tokyo-title{padding:40px 0 70px}.tokyo-placeholder{height:330px}.tokyo-title h3{font-size:23px}
+ footer{padding:70px 20px 25px}.footer-brand{padding:20px 0 5px}.footer-parent{font-size:8px}.footer-mark{margin-top:24px}.footer-mark span:first-child{font-size:54px}.footer-mark span:last-child{font-size:25px;margin-top:14px}.footer-subline{flex-direction:column;gap:7px;margin-top:25px;font-size:7px}.footer-subline span+span:before{display:none}.footer-bottom{margin-top:70px;gap:20px;flex-direction:column}
+}
+
+
+/* Tokyo store + cuisine: same restrained editorial rhythm as the Hangzhou / cuisine sections. */
+.tokyo-store-photo{width:min(1120px,86vw);margin:0 auto 105px;overflow:hidden}
+.tokyo-store-photo img{display:block;width:100%;height:auto;filter:saturate(1.01) contrast(1.015)}
+.tokyo-cuisine{width:min(1120px,86vw);margin:0 auto}
+.tokyo-cuisine-heading{display:flex;flex-direction:column;gap:5px;margin-bottom:48px;font-family:"Noto Serif SC",serif}
+.tokyo-cuisine-heading span:first-child{font-size:clamp(34px,4vw,58px);line-height:1.05}
+.tokyo-cuisine-heading span:nth-child(2){font-family:"Noto Sans JP",sans-serif;font-size:17px}
+.tokyo-cuisine-heading span:nth-child(3){font-family:Inter,sans-serif;font-size:9px;letter-spacing:.2em;color:#777;margin-top:3px}
+.tokyo-food-list{display:flex;flex-direction:column;gap:75px}
+.tokyo-food{width:100%;margin:0}
+.tokyo-food img{display:block;width:100%;height:auto}
+@media(max-width:700px){
+ .tokyo-store-photo,.tokyo-cuisine{width:100%}
+ .tokyo-store-photo{margin-bottom:75px}
+ .tokyo-cuisine-heading{margin-bottom:35px}
+ .tokyo-food-list{gap:48px}
+}
+
+/* Tokyo title follows the same trilingual hierarchy as Hangzhou; Tokyo is intentionally not oversized. */
+.tokyo-title .tokyo-location{justify-content:center;margin:34px 0 30px;border-bottom:0;align-items:baseline}
+.tokyo-title .tokyo-location span:first-child{font-size:clamp(55px,9vw,120px)}
+.tokyo-title .tokyo-location span:nth-child(2){font-size:clamp(25px,4vw,50px)}
+.tokyo-title .tokyo-location span:nth-child(3){font-size:clamp(12px,1.4vw,18px)}
+.tokyo-brand-title{margin-bottom:18px}
+@media(max-width:700px){
+ .tokyo-title .tokyo-location{margin:28px 0 24px;gap:10px}
+ .tokyo-title .tokyo-location span:first-child{font-size:60px}
+ .tokyo-title .tokyo-location span:nth-child(2){font-size:34px}
+ .tokyo-title .tokyo-location span:nth-child(3){font-size:12px}
+}
+
+/* Tokyo opening follows the same left-aligned heading system as Hangzhou. */
+.tokyo-section-heading{align-items:flex-end}
+.tokyo-section-heading .tri-small{text-align:right}
+.tokyo-store{max-width:1250px;margin:0 auto 120px}
+.tokyo-store .tokyo-store-photo{width:100%;margin:0;overflow:hidden}
+.tokyo-store .store-meta{padding-top:24px}
+.tokyo-store .place-cn{color:#eee}
+.tokyo-store .place-jp{color:#eee;opacity:.72}
+.tokyo-store .place-en{color:#eee;opacity:.55}
+@media(max-width:700px){
+ .tokyo-section-heading{display:block}
+ .tokyo-section-heading .tri-small{text-align:left}
+ .tokyo-store{margin-bottom:80px}
+ .tokyo-store .store-meta{padding-top:18px}
+}
+
+
+.tokyo-food-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;width:100%}
+.tokyo-food-pair .tokyo-food{width:100%;aspect-ratio:2 / 3;overflow:hidden}
+.tokyo-food-pair .tokyo-food img{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:700px){
+ .tokyo-food-pair{gap:9px}
+}
