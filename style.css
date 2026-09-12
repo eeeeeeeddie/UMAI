@@ -146,32 +146,18 @@ footer{background:#0e0e0e;color:#eee;padding:100px 7vw 30px}.footer-brand{displa
 @media(max-width:700px){
  .tokyo-food-pair{gap:9px}
 }
-/* ===== Mobile Hero Fix ===== */
 @media (max-width: 768px) {
 
-  .hero,
-  .hero-image,
-  .hero-bg,
-  .hero img {
-    height: 100svh;
-  }
-
-  /* 让手机端首图整体向下取景 */
-  .hero img,
-  .hero-bg {
-    object-fit: cover;
-    object-position: center 68%;
-  }
-
-  /* 如果首图是 background-image */
   .hero {
-    background-position: center 68% !important;
+    height: 100svh;
+    background-position: center 75% !important;
     background-size: cover !important;
   }
 
-  /* 品牌文字不要被图片主体吞掉 */
-  .hero-content {
-    position: absolute;
-    z-index: 5;
+  .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 75%;
   }
 }
